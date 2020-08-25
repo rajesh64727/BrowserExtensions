@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "Image Collector",  
+  "version": "1.1.0",
+  
+  "description": "Shows preview of the page images and provide options to download",
+
+  "browser_action": {
+    "default_icon": "image_collector128.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "128": "image_collector128.png"
+ },
+  "permissions": [
+    "https://*/*",
+    "activeTab"
+  ],
+ "content_scripts": [{
+        "matches": ["https://*/*"],
+        "js": ["content.js"]
+    }]
+}

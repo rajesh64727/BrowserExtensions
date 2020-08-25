@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Magic Filters",  
+  "version": "1.0",
+  
+  "description": "Allows users to see the page content using fiter effects",
+
+  "browser_action": {
+    "default_icon": "images/filter_icon128.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+      "128": "images/filter_icon128.png"
+   },
+  "permissions": [
+    "activeTab"
+  ],
+ "content_scripts": [{
+        "js": ["content.js"],
+        "matches": [ "*://*/*" ]
+    }]
+}

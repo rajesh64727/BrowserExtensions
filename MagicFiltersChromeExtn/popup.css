@@ -1,0 +1,58 @@
+body {
+font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+font-size: 100%;
+background: #b0d1fb;
+}
+
+.container {
+    width: 450px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 2px #3d03f8;
+}
+
+h2{
+	margin:5px;
+}
+
+.credit{
+	display: block;
+	font-size: 10px;
+	text-align: right;
+}
+
+input[type=button]{
+	font-size: 15px;
+	cursor: pointer;
+	font-weight: bold;
+	padding: 0 10px;
+    margin: 5px;
+	min-width: 150px;
+	border: none;
+	border-radius: 10px;;
+}
+
+input:hover[type=button]{	
+	box-shadow: 5px 7px 9px 2px;
+}
+
+input:active[type=button]{
+	font-size: larger;
+	min-width: 200px;
+}
+
+input:focus[type=button]{
+	outline: none;
+}
+
+input[type=radio]{
+	font-weight: 600;
+	margin-left: 12px;
+	margin-right: 5px;
+	transform: scale(1.5);
+}
+
+input[type=range]{
+	width: 90%;
+	margin:10px 0;
+}

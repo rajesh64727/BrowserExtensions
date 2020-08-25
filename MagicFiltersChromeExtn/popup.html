@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Magic Filters</title>
+	<LINK href="popup.css" rel="stylesheet" type="text/css">
+	<base target="_blank">
+</head>
+
+<body>
+	<div class="container">
+		<div>
+			<h2>Magic Filter</h2>
+			<hr>
+			<form action="">
+				<input type="radio" name="filter" id="gray" value="grayscale">
+				<label for="gray">Gray</label>
+				<input type="radio" name="filter" id="blur" value="blur">
+				<label for="blur">Blur</label>
+				<input type="radio" name="filter" id="brightness" value="brightness">
+				<label for="brightness">Brightness</label>
+				<input type="radio" name="filter" id="contrast" value="contrast">
+				<label for="contrast">Contrast</label>
+				<input type="radio" name="filter" id="none" value="reset">
+				<label for="none">None</label>				
+				<br>				
+				<input type="range" id="percent" name="percent" min="0" max="100">				
+			</form>			
+			<div class="credit">
+				Author - <a href="https://rajesh64727.github.io/" >rajesh64727</a>
+			</div>			
+		</div>
+	</div>
+	<script src="popup.js"></script>
+</body>
+
+</html>

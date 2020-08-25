@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "EasyPasswords",  
+  "version": "1.1.0",  
+  "description": "Stronger passwords and easy to remember",
+  "browser_action": {
+    "default_icon": "funnyPassword128.png",
+    "default_popup": "popup.html"
+  },
+  "icons" : {
+    "128" : "funnyPassword128.png"
+  },
+  "author": "rajesh64727",  
+  "homepage_url": "https://rajesh64727.github.io"
+}

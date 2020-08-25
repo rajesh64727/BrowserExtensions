@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zerodha Scrip Plus</title>
+    <link href="popup.css" rel="stylesheet" type="text/css" />
+    <base target="_blank" />
+  </head>
+  <body>
+    <div class="container">
+		<h2>Image Collector</h2>
+      <div>
+        <input type="button" id="btnGetImages" value="Get Images" />
+	  </div>
+	  <div id="displayOptions">
+		<form>
+			<input type="radio" name="imgOption" id="withThumbnail" value="thumbnail" checked>
+			<label for="withThumbnail">Preview</label>
+			<input type="radio" name="imgOption" id="onlyList" value="list">
+			<label for="onlyList">Only List</label>			
+		</form>
+	  </div>
+      <div id="imagesInfo">
+      	Loading...
+	  </div>
+	  <div id="utility">
+		  <div>
+			  <button id="downloadAll">Download All</button>
+		  </div>
+		  <div class="imageList">
+
+		  </div>
+	  </div>
+	  <div class="credits">
+		  Author : <a href="https://rajesh64727.github.io">rajesh64727</a>
+	  </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

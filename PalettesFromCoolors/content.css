@@ -1,0 +1,38 @@
+#coolors-co {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 345px;
+    cursor: grab;
+    border-bottom: 30px solid #fff0;
+    border-image: linear-gradient(120deg,#ff2d60,#ff9132,#ff61fa,#6caafd,#29ccff,#1deab9);    
+    margin: 0;
+    padding: 0;
+    z-index: 10000;
+
+    background-image: linear-gradient(120deg,#ff2d60,#ff9132,#ff61fa,#6caafd,#29ccff,#1deab9);
+    background-repeat: no-repeat;
+    background-size: 800% 400%;
+    background-attachment: fixed;        
+    animation-name: rp_bganimation;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+    will-change: background-position;
+  }
+
+  .d-none {
+    display: none;
+  }
+
+  @keyframes rp_bganimation {
+    0% {
+        background-position: 0 50%
+    }
+    100% {
+        background-position: 100% 50%
+    }
+  }

@@ -1,0 +1,106 @@
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html, hr { font-size: 100%; padding: 0; margin: 0; height: auto; }
+
+body {
+	font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+	font-size: 100%;
+	background: #f0f2ff;
+}
+
+h2{
+	margin:2px;
+	padding: 0;
+}
+
+.container{
+	min-width: 640px;
+	max-width: max-content;
+	height: auto;
+	max-height: 480px;
+	text-align: center;
+	padding: 5px 0;
+}
+#displayOptions{
+	display: none;
+}
+
+#btnGetImages, #downloadAll{
+	height: 30px;
+	width: 80%;
+	margin: 0 auto;
+	display: block;
+	font-size: 1.25em;
+	outline: none;
+	border: none;
+	border-radius: 20px;
+	background-color: lightblue;
+	box-shadow: 0 0 5px 1px blue;
+}
+
+#btnGetImages:hover, #downloadAll:hover{
+	box-shadow: 0 0 5px 3px navy;
+	cursor:pointer;
+}
+
+#downloadAll{
+	display: none ;
+}
+
+#imagesInfo{
+	display: none;
+	max-height: 400px;
+	margin: 0 auto;
+	border: 1px solid #dccccc;
+	overflow-y: scroll;
+}
+
+#utility{
+	display: none;
+	text-align: left;
+	overflow-x: visible;
+	max-height: 400px;
+	margin: 0 auto;
+	border: 1px solid #dccccc;
+	overflow-y: scroll;
+}
+
+.imageList{
+	overflow-x: visible;
+	width: max-content;
+}
+
+.imgSource{
+	display: block;
+	margin-left: 10px;
+}
+
+.imgRow{
+	height: 90px;
+	display: inline-block;
+	padding: 1px 5px;
+	border: 1px solid #141eea;
+	border-radius: 10px;
+}
+
+.imgThumb{
+	float: left;
+    width: 100px;
+    overflow-x: overlay;
+}
+
+.thumbnail{
+	height: 80px;
+}
+
+.downloadImage{
+	float: left;
+	margin: 5px;
+	width: 80px;
+	overflow-x: hidden;
+}
+
+.credits{
+	float:right;
+	font-size:x-small;
+}
