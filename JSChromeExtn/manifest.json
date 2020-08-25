@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "JumpStart Worksheets and Activities",  
+  "version": "1.2.0",  
+  "description": "Educational Worksheets and Activities for kids",
+  "browser_action": {
+    "default_icon": "js-plus64.png",
+    "default_popup": "popup.html"
+  },
+  "icons" : {
+    "128" : "js-plus128.png",
+    "64" : "js-plus64.png"
+  },
+  "author": "rajesh64727, For JumpStart Games"
+}

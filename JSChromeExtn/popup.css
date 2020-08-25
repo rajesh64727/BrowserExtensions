@@ -1,0 +1,98 @@
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html {font-size: 100%;padding: 0;margin: 0;height: 100%;background: none;}
+body {
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	color: white;
+}
+
+.container {
+	width: 600px;
+	height: auto;
+	position: relative;
+	text-align: center;
+	background: #47a3da;
+	border-radius: 15px;
+	box-shadow: 0 0 5px 5px #3292fd;
+}
+
+.details{
+	color: black;
+}
+
+.details h2{
+	margin:0;
+	font-size: 2em;
+}
+
+.details ul{
+	padding: 0;
+}
+
+.details li{
+	list-style: none;
+}
+
+.details a{
+	text-decoration: none;
+	font-weight: bold;
+	color: #000;
+	font-size: 1.25em;
+	line-height: 1.75;
+}
+
+.details a:hover{
+	text-decoration: underline;
+}
+
+.worksheets, .activities {
+    width: 50%;
+	float: left;
+	box-shadow: 0 0 5px white;
+}
+
+.worksheets {
+	border-right: 2px solid white;
+}
+
+.hi-icon {
+    font-size: 72px;
+    padding: 0 10%;
+}
+
+#JSLogo
+{
+	margin: 0 auto;
+	padding: 2px;
+}
+
+.more-info{
+	width: 99%;	
+	margin: 0 auto;
+	display: grid;
+
+	background-image: linear-gradient(120deg,#ff2d60,#ff9132,#ff61fa,#6caafd,#29ccff,#1deab9);
+    background-repeat: no-repeat;
+    background-size: 800% 400%;
+    background-attachment: fixed;        
+    animation-name: rp_bganimation;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+    will-change: background-position;
+}
+
+@keyframes rp_bganimation {
+    0% {
+        background-position: 0 50%
+    }
+    100% {
+        background-position: 100% 50%
+	}
+}
+
+.more-info a {
+	color: white;
+}
