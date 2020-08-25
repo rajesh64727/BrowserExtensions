@@ -1,0 +1,54 @@
+body {
+	font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+	font-size: 100%;
+	/*ROPOSO background animation*/
+	background-repeat: no-repeat;
+	background-size: 800% 400%;
+	background-attachment: fixed;
+	background-image: linear-gradient(120deg,#ff2d60,#ff9132,#ff61fa,#6caafd,#29ccff,#1deab9);
+	animation-name: rp_bganimation;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-delay: 0;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-play-state: running;
+	will-change: background-position;
+}
+@keyframes rp_bganimation {
+    0% {
+        background-position: 0 50%
+    }
+    100% {
+        background-position: 100% 50%
+    }
+}
+
+.container {
+	width: 150px;
+    max-height: 200px;
+	text-align: center;
+}
+
+.credit{
+	display: block;
+	font-size: 0.75em;
+}
+
+input[type=button]{
+	font-size: 20px;
+	cursor: pointer;
+	padding: 0 10px;
+    margin: 5px 0;
+    min-width: 80px;
+	min-height: 30px;
+	border-radius: 25px;
+	outline: none;
+	border-color: white;
+}
+
+input:hover[type=button]{
+	font-weight: bolder;
+	height: 50px;
+	box-shadow: white 0px 0px 5px 5px;
+}
