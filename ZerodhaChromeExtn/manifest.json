@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "Zerodha Scrip Plus",  
+  "version": "1.1.0",
+  
+  "description": "Zerodha marketwatch and holdings scrips fundamental and technical analysis from various sites",
+
+  "browser_action": {
+    "default_icon": "kite-nav-plus.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "128": "kite-nav-plus128.png",
+    "64": "kite-nav-plus64.png",
+    "48": "kite-nav-plus.png"
+ },
+  "permissions": [
+    "https://kite.zerodha.com/*"
+  ],
+ "content_scripts": [{
+        "matches": ["https://kite.zerodha.com/*"],
+        "js": ["content.js"]
+    }]
+}
