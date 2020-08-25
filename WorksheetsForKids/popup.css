@@ -1,0 +1,75 @@
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html {font-size: 100%;padding: 0;margin: 0;height: 100%;background: none;}
+body {
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	text-align: center;
+}
+
+.container {
+	width: 768px;
+	height: 500px;
+	position: relative;
+	text-align: center;
+	border-radius: 10px;
+	resize: both;
+	overflow: auto;
+	color: white;
+
+	background-repeat: no-repeat;
+	background-size: 800% 400%;
+	background-attachment: fixed;        
+	animation-name: rp_bganimation;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-play-state: running;
+	will-change: background-position;
+	background-image: linear-gradient(120deg,#ff2d60,#ff9132,#ff61fa,#6caafd,#29ccff,#1deab9);
+}
+
+@keyframes rp_bganimation {
+	0% {
+		background-position: 0 50%
+	}
+	100% {
+		background-position: 100% 50%
+	}
+}
+
+.container > div {
+	display: block;
+	width: 100%;
+}
+
+.source-list ul {
+	height: 40px;
+	width: 100%;
+}
+
+.source-list ul li {
+	list-style: none;
+	display: inline-block;
+	margin: 2px 5px;
+	box-shadow: 0px 0px 8px white;
+    padding: 0 1px;
+    cursor: pointer;
+}
+
+
+.iframe-container {
+	height: calc( 100% - 92px);
+	width: 100%;
+	margin: 0 auto;
+}
+
+#iframe-content {
+	height: 100%;
+	width: 100%;
+	background-color: white;
+}
+
+.author{
+	height: 20px;
+}
