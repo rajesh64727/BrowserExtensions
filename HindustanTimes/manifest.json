@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "HindustanTimes Better View",  
+    "version": "1.0.0",
+    
+    "description": "Browse the HindustanTimes website news without login popup. This is a PoC work with no commercial intent.",
+  
+    "icons": {
+        "128": "images/icon_128.png",
+        "64": "images/icon_64.png"
+     },
+    "permissions": [
+      "https://www.hindustantimes.com/*"
+    ],
+   "content_scripts": [{
+          "matches": ["https://www.hindustantimes.com/*"],
+          "js": ["content.js"],
+          "css": [ "content.css" ]
+      }],
+    "author": "Rajesh Kumar rajesh64727@gmail.com"
+}

@@ -1,0 +1,18 @@
+body {
+    overflow-y: scroll !important;
+}
+.skippablePop {
+    display: none;
+    margin-left: -9999px;
+}
+
+/* Ad removal */
+.mb10, .mb20, .mb30, .centerAd, .ad-min, .rightSec, .ads-align, .top-ad-unit, [id*=div-gpt-ad-] {
+    display: none !important;
+    margin-left: -9999px;
+}
+
+/* Full width*/
+[id*=article_] > div.col9 {
+    width: 100% !important;
+}
