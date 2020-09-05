@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "HindustanTimes Free Epaper",  
+    "version": "1.0.0",
+    
+    "description": "Read HindustanTimes epaper without subscription",
+    "browser_action": {
+      "default_icon": {
+         "128": "images/icon_128.png"
+      }
+    },
+    "icons": {
+        "128": "images/icon_128.png",
+        "64": "images/icon_64.png"
+     },
+    "permissions": [
+      "https://epaper.hindustantimes.com/*"
+    ],
+    "background": {
+       "scripts": [ "background.js" ]
+    },
+   "content_scripts": [{
+          "matches": ["https://epaper.hindustantimes.com/*"],
+          "js": ["content.js"],
+          "css": [ "content.css" ]
+      }],
+    "author": "Rajesh Kumar rajesh64727@gmail.com"
+}
