@@ -1,0 +1,18 @@
+{
+   "browser_action": {
+      "default_icon": "fpsbar128.png"
+   },
+   "content_scripts": [ {
+      "css": [ "content.css" ],
+      "js": [ "content.js" ],
+      "matches": [ "<all_urls>" ]
+   } ],
+   "description": "Shows current display device Frames per Second. The animated bar changes color between green and red. Alarms when FPS is below 30",
+   "icons": {
+      "128": "fpsbar128.png"
+   },   
+   "manifest_version": 2,
+   "name": "FPS Alarm",
+   "permissions": [ "activeTab" ],
+   "version": "1.1.0"
+}
