@@ -15,7 +15,8 @@
         "activeTab"
     ],  
     "icons": {
-        "64": "images/icon_64.png"
+        "64": "images/icon_64.png",
+        "128": "images/icon_128.png"
      },
     "author": "rajesh64727@gmail.com"
 }
