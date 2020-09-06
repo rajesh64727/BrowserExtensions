@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "BangkokPost Better View",  
+    "version": "1.0.0",
+    
+    "description": "Browse the BangkokPost website news without ads and in better layout.",
+  
+    "icons": {
+        "128": "images/icon_128.png",
+        "64": "images/icon_64.png"
+     },
+    "permissions": [
+      "https://www.bangkokpost.com/*"
+    ],
+   "content_scripts": [{
+          "matches": ["https://www.bangkokpost.com/*"],
+          "js": ["content.js"],
+          "css": [ "content.css" ]
+      }],
+    "author": "rajesh64727@gmail.com"
+}

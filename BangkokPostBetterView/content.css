@@ -1,0 +1,14 @@
+body {
+    overflow-y: scroll !important;
+}
+
+/* Full width*/
+[id*=div-gpt-ad], [id*=oa-360-] {
+    display: none !important;
+}
+
+.row p {
+    margin-bottom: 5px !important;
+    width : 100%;
+    max-width: 3960px !important;
+}

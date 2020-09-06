@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "Image Remover",  
+    "version": "1.0.0",    
+    "description": "Removes images from the page. Makes the page editable",
+    "background": {
+        "scripts": ["background.js"]
+    },    
+   "content_scripts": [{
+        "matches": [ "*://*/*" ],
+        "js": ["content.js"]
+    }],
+    "permissions": [
+        "contextMenus",
+        "activeTab"
+    ],  
+    "icons": {
+        "64": "images/icon_64.png"
+     },
+    "author": "rajesh64727@gmail.com"
+}
