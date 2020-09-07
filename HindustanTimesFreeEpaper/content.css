@@ -1,3 +1,7 @@
-header, .header {
+header.header, .toplogobanner_dummy, .toplogobannerRS1 {
     display: none;
+}
+
+[id*=div-gpt-ad] {
+    display: none !important;
 }

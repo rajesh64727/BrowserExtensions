@@ -10,6 +10,8 @@ function processMessage(request, sender, sendResponse) {
 
 window.onload = function() {
     document.cookie = "_skipSignIn=PKMKB_CKMKB; expires=Sat, 28 Sep 2028 12:00:00 UTC; path=/";
-    document.querySelector('header').style.display = 'none';
+    document.cookie = "token=true; expires=Sat, 28 Sep 2028 12:00:00 UTC; path=/";
+    document.cookie = "_allow_action=1; expires=Sat, 28 Sep 2028 12:00:00 UTC; path=/; domain=.livehindustan.com";
+    document.querySelector('header.header').style.display = 'none';
     console.clear();
 }
