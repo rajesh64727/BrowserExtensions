@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
     "name": "HindustanTimes Free Epaper",  
-    "version": "1.1.0",
+    "version": "2.0.0",
     
-    "description": "Read HindustanTimes epaper without subscription",
+    "description": "Read HindustanTimes (English / Hindi) and LiveMint epapers without subscription",
     "browser_action": {
       "default_icon": {
          "128": "images/icon_128.png"
@@ -15,14 +15,16 @@
      },
     "permissions": [
       "https://epaper.hindustantimes.com/*", 
-      "https://epaper.livehindustan.com/epaper/*"
+      "https://epaper.livehindustan.com/*",
+      "https://epaper.livemint.com/*"
     ],
     "background": {
        "scripts": [ "background.js" ]
     },
    "content_scripts": [{
           "matches": ["https://epaper.hindustantimes.com/*", 
-                      "https://epaper.livehindustan.com/*"],
+                      "https://epaper.livehindustan.com/*", 
+                      "https://epaper.livemint.com/*" ],
           "js": ["content.js"],
           "css": [ "content.css" ]
       }],
