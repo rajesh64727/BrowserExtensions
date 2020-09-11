@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+
+    "name": "LA Times Plus",  
+
+    "version": "1.0.0",
+    
+    "description": "Ad free LA Times News site",
+
+    "browser_action": {
+      "default_icon": {
+         "128": "images/icon_128.png"
+      }
+    },
+
+    "icons": {
+        "128": "images/icon_128.png",
+        "64": "images/icon_64.png"
+     },
+
+    "permissions": [ "https://www.latimes.com/*" ],
+
+    "content_scripts": [{
+          "matches": ["https://www.latimes.com/*"],
+          "js": ["content.js"],
+          "css": [ "content.css" ]
+      }],
+    
+      "author": "Rajesh Kumar rajesh64727@gmail.com"
+}

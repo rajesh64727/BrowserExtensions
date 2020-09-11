@@ -1,0 +1,20 @@
+.page-wrapper {
+    display: block !important;
+}
+
+body.page-body {
+    overflow-y: scroll !important;
+}
+
+.article-page .page-article-container, .article-page .author-info, .article-page .page-main {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+p {
+    font-size: 1.25em;
+}
+
+[id*=dfp-], [class*="google-dfp"], metering-modal {
+    display: none !important;
+}
