@@ -1,24 +1,23 @@
 {
   "manifest_version": 2,
   "name": "Jagran EPaper Full Access",  
-  "version": "1.1",
+  "version": "1.2.0",
   
-  "description": "E-paper full access. It is a proof of concept job. In case of copyright conflict, please let me know.",
+  "description": "Leading Indian Hindi Newspaper. Now read Dainik Jagran e-paper without subscription. It is a proof of concept work with no commercial intent.",
 
   "browser_action": {
-    "default_icon": "jagranIcon48.png",
-    "default_popup": "popup.html"
+    "default_icon": "icon_64.png"
   },
   "icons": {
-      "128": "jagranIcon128.png",
-	    "64": "jagranIcon64.png",
-      "48": "jagranIcon48.png"
+	    "64": "icon_64.png",
+      "32": "icon_32.png"
    },
   "permissions": [
     "https://epaper.jagran.com/*"
   ],
  "content_scripts": [{
         "matches": ["https://epaper.jagran.com/*"],
-        "js": ["content.js"]
+        "js": ["content.js"],
+        "css": [ "content.css" ]
     }]
 }
