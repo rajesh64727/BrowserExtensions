@@ -3,7 +3,7 @@
   "name": "Jagran EPaper Full Access",  
   "version": "1.2.0",
   
-  "description": "Leading Indian Hindi Newspaper. Now read Dainik Jagran e-paper without subscription. It is a proof of concept work with no commercial intent.",
+  "description": "Indian Hindi Newspaper. Now read Dainik Jagran e-paper without subscription. Its a PoC work with no commercial intent. Thanks",
 
   "browser_action": {
     "default_icon": "icon_64.png"
