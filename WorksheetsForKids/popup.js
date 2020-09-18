@@ -1,8 +1,7 @@
     const worksheetsURLs = [
       { "kids-pages.com": "https://www.kids-pages.com/worksheets.htm" },
       { "greatschools.org": "https://www.greatschools.org/gk/worksheets/" },
-      { "edubuzzkids.com": "https://www.edubuzzkids.com/worksheets" },
-      { "education.com": "https://www.education.com/worksheets/" },
+      { "edubuzzkids.com": "https://www.edubuzzkids.com/worksheets" },     
       { "jumpstart.com": "https://www.jumpstart.com/worksheets/" },
       { "dltk-kids.com": "https://www.dltk-kids.com/top10.htm" },      
       { "123homeschool4me.com": "https://www.123homeschool4me.com/home-school-free-printables/" },      
