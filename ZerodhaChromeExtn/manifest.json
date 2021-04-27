@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Zerodha Scrip Plus",  
-  "version": "1.1.0",
+  "version": "1.2.0",
   
   "description": "Zerodha marketwatch and holdings scrips fundamental and technical analysis from various sites",
 
@@ -20,6 +20,7 @@
   ],
  "content_scripts": [{
         "matches": ["https://kite.zerodha.com/*"],
-        "js": ["content.js"]
+        "js": ["content.js"],
+        "css": ["content.css"]
     }]
 }

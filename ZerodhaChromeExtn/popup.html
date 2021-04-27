@@ -1,34 +1,37 @@
-<!doctype html>
-<html><head>
-    <title>Zerodha Scrip Plus</title>	
-    <LINK href="popup.css" rel="stylesheet" type="text/css">	
-	<base target="_blank">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zerodha Scrip Plus</title>
+    <link href="popup.css" rel="stylesheet" type="text/css" />
+    <base target="_blank" />
   </head>
-  <body> 
-	<div class="container">
-		<div>
-			<input type="button" id="btnRefresh" value="Refresh" />
-			<input type="button" id="btnFullscreen" value="Full Screen" />
-			<br>
-		</div>
-		<div id="ScripsInfo">			
-			<div>
-				<span class="marketwatch headerLabel">Marketwatch</span>
-				<div id="marketwatch" class="dvScrips">
-
-				</div>
-			</div>
-			<hr>
-			<div>
-				<span class="holdings headerLabel">Holdings</span>
-				<div id="holdings" class="dvScrips">
-
-				</div>
-			</div>
-			<div class="small">Author : <a href="https://rajesh64727.github.io">rajesh64727</a></div>
-		</div>		
-	</div>	
-	<script src="jquery.min.js"></script>
-	<script src="popup.js"></script>
-</body>
+  <body>
+    <div class="container">
+      <div>
+        <input type="button" id="btnRefresh" value="Refresh" />
+        <input type="button" id="btnFullscreen" value="Full Screen" />
+        <br />
+      </div>
+      <div id="ScripsInfo">
+        <div>
+          <span class="marketwatch headerLabel">Marketwatch</span>
+          <div id="marketwatch" class="dvScrips"></div>
+        </div>
+        <hr />
+        <div>
+          <span class="holdings headerLabel">Holdings</span>
+          <div id="holdings" class="dvScrips">
+            <div class="center">
+              Please open <a href="https://kite.zerodha.com/holdings">Holdings</a> page to see the details
+            </div>
+          </div>
+        </div>
+        <div class="small">
+          Author : <a href="https://rajesh64727.github.io">rajesh64727</a>
+        </div>
+      </div>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script src="popup.js"></script>
+  </body>
 </html>
