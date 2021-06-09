@@ -46,3 +46,12 @@
         min-width: 350px !important;
     }
 }
+
+.broker-container{
+    text-align: center;
+    color: red;
+}
+
+.broker-container span{
+    font-size: smaller;
+}
