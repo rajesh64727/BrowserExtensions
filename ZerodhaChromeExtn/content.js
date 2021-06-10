@@ -98,8 +98,6 @@ function calculateBrokerage(){
 			);
 		});
 
-		console.log(tradeData);
-
 		let totalCharges = 0.0;
 		let totalBrokerage = 0.0;
 		let govtCharges = 0.0;
@@ -145,4 +143,13 @@ function calculateBrokerage(){
 	}
 }
 
-window.onload = calculateBrokerage;
+// This will load the brokerage UI after the document load
+
+let fnBrokerageUpdater = setInterval( function(){
+  if(document.querySelector(".completed-orders") != null){
+    calculateBrokerage();
+    clearInterval(fnBrokerageUpdater);
+  } console.log('Test');
+}, 3000);
+
+window.onload = fnBrokerageUpdater;
