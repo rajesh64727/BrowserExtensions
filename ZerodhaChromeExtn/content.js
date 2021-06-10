@@ -105,7 +105,7 @@ function calculateBrokerage(){
 		tradeData.forEach( trade => {
 
 			if(trade.status == 'COMPLETE' && trade.product == 'MIS'){
-				const price = parseFloat(trade.price);
+				const price = parseFloat(trade.price.replace(/\,/g,''));
 				const turnover = parseFloat(trade.quantity) * price;
 				let brokerage = 0;
 				switch(trade.exchange){
