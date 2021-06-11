@@ -83,7 +83,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
 function calculateBrokerage(){
 	if (location.href.indexOf("kite.zerodha.com/orders") != -1) 
-	{
+	{    
 		let successTrades = [...document.querySelectorAll(".completed-orders table tbody tr")];
 
 		let tradeData = successTrades.map( trade => {
@@ -138,18 +138,21 @@ function calculateBrokerage(){
 			brokerContainer.id = "scripplus-brokerage-container";
 			brokerContainer.classList.add("broker-container");
 			document.querySelector(".completed-orders").insertBefore( brokerContainer, document.querySelector(".completed-orders").childNodes[0] );
-			brokerContainer.innerHTML = "Intraday ( MIS ) charges : <b>" + totalCharges.toFixed(2) + "</b> <br><span class='small'> Brokerage : "+totalBrokerage.toFixed(2)+" , Government Taxes : "+ govtCharges.toFixed(2) + "</span>";
+			brokerContainer.innerHTML = "Intraday ( MIS ) charges : <b>" + totalCharges.toFixed(2) + "</b> <button class='refreshBrokerage' id='btnRefreshBrokerage' >Refresh</button>  <br><span class='small'> Brokerage : "+totalBrokerage.toFixed(2)+" , Government Taxes : "+ govtCharges.toFixed(2) + "</span>";
 		}  
 	}
 }
 
 // This will load the brokerage UI after the document load
 
-let fnBrokerageUpdater = setInterval( function(){
-  if(document.querySelector(".completed-orders") != null){
-    calculateBrokerage();
-    clearInterval(fnBrokerageUpdater);
-  } console.log('Test');
-}, 3000);
-
-window.onload = fnBrokerageUpdater;
+window.onload = function(){
+  if(location.href.indexOf("kite.zerodha.com/orders") != -1){
+    let fnBrokerageUpdater = setInterval( function(){
+      if(document.querySelector(".completed-orders") != null){
+        calculateBrokerage();
+        document.querySelector('#btnRefreshBrokerage').addEventListener("click", calculateBrokerage);
+        clearInterval(fnBrokerageUpdater);
+      }
+    }, 1500);
+  }
+}

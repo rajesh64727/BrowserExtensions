@@ -55,3 +55,12 @@
 .broker-container span{
     font-size: smaller;
 }
+
+.refreshBrokerage{
+    line-height: 0.4;
+    padding: 10px;
+    color: var(--color-text-8);
+    background-color: rgba(var(--color-fruit-salad-green--rgb),.1);
+    font-family: Open Sans,sans-serif;
+    border: none;
+}
