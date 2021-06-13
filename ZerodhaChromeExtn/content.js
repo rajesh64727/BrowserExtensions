@@ -82,12 +82,14 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 // Brokerage and Tax calculations
 
 function calculateBrokerage(){
+  console.clear();
 	if (location.href.indexOf("kite.zerodha.com/orders") != -1) 
 	{    
 		let successTrades = [...document.querySelectorAll(".completed-orders table tbody tr")];
 
 		let tradeData = successTrades.map( trade => {
 			return(  {
+      symbol : trade.querySelector('.instrument .tradingsymbol').innerText,
 			tranType : trade.querySelector('.transaction-type span').innerText,
 			product : trade.querySelector('.product').innerText,
 			exchange : trade.querySelector('.instrument .exchange').innerText,
@@ -98,27 +100,36 @@ function calculateBrokerage(){
 			);
 		});
 
-		let totalCharges = 0.0;
 		let totalBrokerage = 0.0;
 		let govtCharges = 0.0;
 
 		tradeData.forEach( trade => {
 
-			if(trade.status == 'COMPLETE' && trade.product == 'MIS'){
+			if(true || trade.status == 'COMPLETE' && trade.product == 'MIS'){
 				const price = parseFloat(trade.price.replace(/\,/g,''));
 				const turnover = parseFloat(trade.quantity) * price;
 				let brokerage = 0;
+        let transactionCharges = 0;
+        let STT = 0;
+        let isOptions = trade.symbol.endsWith('CE') || trade.symbol.endsWith('PE');
+
 				switch(trade.exchange){
-					case 'NFO' : brokerage = 20; break;
+					case 'NFO' : 
+                brokerage = 20; 
+                transactionCharges = isOptions ? parseFloat( turnover * 0.00053 ): parseFloat( turnover * 0.00002);
+                STT = isOptions ? parseFloat( turnover * 0.0005 ) : parseFloat( turnover * 0.0001 );
+                break;
 					case 'NSE' :
 					case 'BSE': brokerage = turnover * 0.0003; 
-								brokerage = brokerage > 20 ? 20 : brokerage; 							
+								brokerage = brokerage > 20 ? 20 : brokerage; 							                
+                transactionCharges = parseFloat( turnover * 0.0000345 );
+                STT = parseFloat(turnover * 0.00025);
 								break;
 					default : 0; break;
 				}
+
+        if(trade.tranType == "BUY"){ STT = 0; }
 				
-				const STT = trade.tranType == 'SELL'? parseFloat(turnover * 0.00025): 0.0 ;
-				const transactionCharges = parseFloat(turnover * 0.0000345);
 				const GST = parseFloat(( brokerage + transactionCharges ) * 0.18);
 				const SEBICharges = parseFloat( turnover / 1000000 );
 				const stampDuty = trade.tranType == 'BUY' ? parseFloat(turnover * 0.00003) : 0.0;
@@ -126,10 +137,9 @@ function calculateBrokerage(){
 				let taxes = STT + transactionCharges + GST + SEBICharges + stampDuty;
 				totalBrokerage += brokerage;
 				govtCharges += taxes;
-
-				totalCharges += brokerage + taxes;
-		}
+		  }
 		});
+
 
 		// Check for the placeholder and update the brokerage amount
 		const brokerContainer = document.getElementById( "scripplus-brokerage-container");
@@ -138,7 +148,7 @@ function calculateBrokerage(){
 			brokerContainer.id = "scripplus-brokerage-container";
 			brokerContainer.classList.add("broker-container");
 			document.querySelector(".completed-orders").insertBefore( brokerContainer, document.querySelector(".completed-orders").childNodes[0] );
-			brokerContainer.innerHTML = "Intraday ( MIS ) charges : <b>" + totalCharges.toFixed(2) + "</b> <button class='refreshBrokerage' id='btnRefreshBrokerage' >Refresh</button>  <br><span class='small'> Brokerage : "+totalBrokerage.toFixed(2)+" , Government Taxes : "+ govtCharges.toFixed(2) + "</span>";
+			brokerContainer.innerHTML = "Intraday ( MIS ) charges : <b>Rs. " + (totalBrokerage + govtCharges).toFixed(2) + "</b> <button class='refreshBrokerage' id='btnRefreshBrokerage' >Refresh</button>  <br><span class='small'> Brokerage : "+totalBrokerage.toFixed(2)+" , Government Taxes : "+ govtCharges.toFixed(2) + "</span>";
 		}  
 	}
 }

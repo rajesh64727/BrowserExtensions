@@ -2,9 +2,9 @@
   "manifest_version": 2,
 
   "name": "Zerodha Scrip Plus",  
-  "version": "1.2.7",
+  "version": "1.2.8",
   
-  "description": "Zerodha fullscreen trading with fundamental and technical analysis options",
+  "description": "Zerodha fullscreen trading with brokerage calculator and analysis options",
 
   "browser_action": {
     "default_icon": "kite-nav-plus.png",

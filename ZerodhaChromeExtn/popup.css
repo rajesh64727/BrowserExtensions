@@ -52,7 +52,10 @@ li:hover {
 #btnFullscreen {
   margin: 0 0 15px 1%;
   font-size: 1.5em;
-  box-shadow: 0 0 1px 2px #00000047;
+  box-shadow: 0 0 1px 2px #00000047;  
+  width: 95%;
+  border-radius: 20px;
+  border-color: rgba(255,255,255,0.01);
 }
 
 #btnFullscreen:hover {
@@ -62,10 +65,6 @@ li:hover {
 #btnRefresh {
   width: 18%;
   display: none;
-}
-#btnFullscreen {
-  width: 95%;
-  border-radius: 20px;
 }
 
 #ScripsInfo {
@@ -101,6 +100,8 @@ li:hover {
   box-shadow: 0 0 1px 1px #ffe;
   border-radius: 20px;
   padding: 5px 15px;
+  margin-right: 75%;
+  font-weight: bold;
 }
 
 .center{
