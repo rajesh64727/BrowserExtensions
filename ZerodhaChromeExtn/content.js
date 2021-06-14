@@ -82,7 +82,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 // Brokerage and Tax calculations
 
 function calculateBrokerage(){
-  console.clear();
 	if (location.href.indexOf("kite.zerodha.com/orders") != -1) 
 	{    
 		let successTrades = [...document.querySelectorAll(".completed-orders table tbody tr")];
@@ -105,7 +104,7 @@ function calculateBrokerage(){
 
 		tradeData.forEach( trade => {
 
-			if(trade.status == 'COMPLETE' && trade.product == 'MIS'){
+			if(trade.status == 'COMPLETE' && ( trade.product == 'MIS' || trade.product == 'CO') ){
 				const price = parseFloat(trade.price.replace(/\,/g,''));
 				const turnover = parseFloat(trade.quantity) * price;
 				let brokerage = 0;
