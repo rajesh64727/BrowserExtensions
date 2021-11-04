@@ -42,13 +42,12 @@ input[type=button]{
     margin: 5px 0;
     min-width: 80px;
 	min-height: 30px;
-	border-radius: 25px;
+	border-radius: 15px;
 	outline: none;
 	border-color: white;
 }
 
 input:hover[type=button]{
 	font-weight: bolder;
-	height: 50px;
 	box-shadow: white 0px 0px 5px 5px;
 }
