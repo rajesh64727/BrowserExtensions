@@ -29,4 +29,8 @@ window.onload = function () {
   console.clear();
 };
 
-
+setInterval(function(){
+  document.querySelectorAll('.disable').forEach(function (item) {
+    item.classList.remove('disable');
+  });
+}, 1500);
