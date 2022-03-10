@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Adfree TutorialsPoint",  
-  "version": "1.0.0",
+  "version": "1.0.1",
   
   "description": "Adfree version of TutorialsPoint. It removes the unnecessay sections of the page so that the user focus only on the tutorial content",
 
