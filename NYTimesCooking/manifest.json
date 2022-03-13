@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "NYTimes Free Cooking",  
+  "version": "1.0.0",
+  
+  "description": "Removes signup/ subscription popup from the NYTimes cooking website.",
+
+  "icons": {
+      "128": "images/nyc_icon128.png",	    
+      "48": "images/nyc_icon48.png"
+   },
+  "permissions": [ "tabs" ],
+ "content_scripts": [{
+        "matches": ["https://cooking.nytimes.com/*"],
+        "js": ["content.js"]
+    }]
+}
