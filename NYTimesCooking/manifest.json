@@ -9,7 +9,6 @@
       "128": "images/nyc_icon128.png",	    
       "48": "images/nyc_icon48.png"
    },
-  "permissions": [ "tabs" ],
  "content_scripts": [{
         "matches": ["https://cooking.nytimes.com/*"],
         "js": ["content.js"]
