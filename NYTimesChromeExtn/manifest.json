@@ -1,11 +1,11 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "NY Times Articles",  
-  "version": "1.0",
+  "version": "1.2.0",
   
-  "description": "The New York Times Articles full access. It is a sample ( Not for Profit ) work.",
+  "description": "The New York Times Articles full access. It is a 'Proof of Concept' work.",
 
-  "browser_action": {
+  "action": {
     "default_icon": "images/icon48.png",
     "default_popup": "popup.html"
   },

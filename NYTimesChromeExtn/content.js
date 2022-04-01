@@ -2,7 +2,7 @@ chrome.runtime.onMessage.addListener(
 	function (request, sender, sendResponse) {
 		switch (request.action) {
 			case 'readAll': 
-				ReadArticles();
+				readArticles();
 				break;
 			case 'removeAds': 
 				removeAds();
@@ -13,7 +13,7 @@ chrome.runtime.onMessage.addListener(
 	}
 );
 
-function ReadArticles(){
+function readArticles(){
 	if(document.querySelector('#gateway-content')){
 		document.querySelector('#gateway-content').style.display = "none"; 
 	}
@@ -43,9 +43,14 @@ function removeAds(){
 	});
 }
 
+function removeAdsAndReadArticles(){
+	removeAds();
+	readArticles();
+}
+
 window.onload = function () {
-	ReadArticles();
-	setInterval(ReadArticles(), 10000);    
+	removeAdsAndReadArticles();
+	setInterval(removeAdsAndReadArticles(), 3000);    
 	console.clear();
   };
   
