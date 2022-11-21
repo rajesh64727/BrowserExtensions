@@ -88,13 +88,13 @@ function calculateBrokerage(){
 
 		let tradeData = successTrades.map( trade => {
 			return(  {
-      symbol : trade.querySelector('.instrument .tradingsymbol').innerText,
-			tranType : trade.querySelector('.transaction-type span').innerText,
-			product : trade.querySelector('.product').innerText,
-			exchange : trade.querySelector('.instrument .exchange').innerText,
-			quantity : trade.querySelector('.quantity').innerText.split('/')[0],
-			price : trade.querySelector('.average-price span').innerText.split('/')[0],
-			status : trade.querySelector('.order-status span').innerText
+      symbol : trade.querySelector('.instrument .tradingsymbol')?.innerText,
+			tranType : trade.querySelector('.transaction-type span')?.innerText,
+			product : trade.querySelector('.product')?.innerText,
+			exchange : trade.querySelector('.instrument .exchange')?.innerText,
+			quantity : trade.querySelector('.quantity')?.innerText.split('/')[0],
+			price : trade.querySelector('.average-price span')?.innerText.split('/')[0],
+			status : trade.querySelector('.order-status span')?.innerText
 			}
       );
 		});
