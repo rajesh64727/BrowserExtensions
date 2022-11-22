@@ -123,6 +123,7 @@ function calculateBrokerage(){
 								brokerage = brokerage > 20 ? 20 : brokerage; 							                
                 transactionCharges = parseFloat( turnover * 0.0000345 );
                 STT = parseFloat(turnover * 0.00025);
+                STT = STT > 1 ? STT : 1;
 								break;
 					default : 0; break;
 				}
@@ -147,11 +148,9 @@ function calculateBrokerage(){
 			brokerContainer.id = "scripplus-brokerage-container";
 			brokerContainer.classList.add("broker-container");
 			document.querySelector(".completed-orders").insertBefore( brokerContainer, document.querySelector(".completed-orders").childNodes[0] );
-      brokerContainer.innerHTML = "Intraday ( MIS ) charges : <b>Rs. " + (totalBrokerage + govtCharges).toFixed(2) + "</b> <button class='refreshBrokerage' id='btnRefreshBrokerage' >Refresh</button>  <br><span class='small'> Brokerage : "+totalBrokerage.toFixed(2)+" , Government Taxes : "+ govtCharges.toFixed(2) + "</span>";		
-    }else{
-      console.log("refresh");
-      brokerContainer.innerHTML = "Intraday ( MIS ) charges : <b>Rs. " + (totalBrokerage + govtCharges).toFixed(2) + "</b> <button class='refreshBrokerage' id='btnRefreshBrokerage' >Refresh</button>  <br><span class='small'> Brokerage : "+totalBrokerage.toFixed(2)+" , Government Taxes : "+ govtCharges.toFixed(2) + "</span>";		
     }
+    
+    brokerContainer.innerHTML = "Intraday ( MIS ) charges : <b>Rs. " + (totalBrokerage + govtCharges).toFixed(2) + "</b> <button class='refreshBrokerage' id='btnRefreshBrokerage' >Refresh</button>  <br><span class='small'> Brokerage : "+totalBrokerage.toFixed(2)+" , Government Taxes : "+ govtCharges.toFixed(2) + "</span>";
 	}
 }
 
