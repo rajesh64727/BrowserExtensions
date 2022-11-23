@@ -3,7 +3,7 @@
 }
 
 .marketwatch-sidebar .marketwatch-selector li.item {
-	padding: 10px 25px !important;
+	padding: 10px 18px !important;
 }
 
 .app .container .container-left {
@@ -19,9 +19,9 @@
 }
 
 .marketwatch-sidebar {
-    font-size: .85rem !important;
-    font-weight: bolder !important;
+    font-size: .8rem !important;
 }
+
 
 .instrument:hover, .search-result-item:hover{
     border-top: 1px solid rgba(65, 132, 243, 0.8) !important;
@@ -61,6 +61,6 @@
     padding: 10px;
     color: var(--color-text-8);
     background-color: rgba(var(--color-fruit-salad-green--rgb),.1);
-    font-family: Open Sans,sans-serif;
-    border: none;
+    font-family: Open Sans,sans-serif;    
+    border-radius: 10px;
 }

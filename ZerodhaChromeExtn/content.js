@@ -101,6 +101,11 @@ function calculateBrokerage(){
 
 		let totalBrokerage = 0.0;
 		let govtCharges = 0.0;
+    let totalSTT = 0.0;
+    let totalSEBI = 0.0;
+    let totalGST = 0.0;
+    let totalStamp = 0.0;
+    let totalTransactionCharges = 0.0;
 
 		tradeData.forEach( trade => {
 
@@ -134,6 +139,12 @@ function calculateBrokerage(){
 				const SEBICharges = parseFloat( turnover / 1000000 );
 				const stampDuty = trade.tranType == 'BUY' ? parseFloat(turnover * 0.00003) : 0.0;
 
+        totalTransactionCharges += transactionCharges;
+        totalGST += GST;
+        totalSEBI += SEBICharges;
+        totalStamp += stampDuty;
+        totalSTT += STT;
+
 				let taxes = STT + transactionCharges + GST + SEBICharges + stampDuty;
 				totalBrokerage += brokerage;
 				govtCharges += taxes;
@@ -142,15 +153,26 @@ function calculateBrokerage(){
 
 
 		// Check for the placeholder and update the brokerage amount
-		const brokerContainer = document.getElementById( "scripplus-brokerage-container");
-		if (brokerContainer == null || brokerContainer == undefined) {
-			let brokerContainer = document.createElement("div");
-			brokerContainer.id = "scripplus-brokerage-container";
-			brokerContainer.classList.add("broker-container");
-			document.querySelector(".completed-orders").insertBefore( brokerContainer, document.querySelector(".completed-orders").childNodes[0] );
+		let brokerageContainer = document.getElementById( "scripplus-brokerage-container");
+		if (brokerageContainer == null || brokerageContainer == undefined) {
+			brokerageContainer = document.createElement("div");
+			brokerageContainer.id = "scripplus-brokerage-container";
+			brokerageContainer.classList.add("broker-container");
+			document.querySelector(".completed-orders").insertBefore( brokerageContainer, document.querySelector(".completed-orders").childNodes[0] );
     }
     
-    brokerContainer.innerHTML = "Intraday ( MIS ) charges : <b>Rs. " + (totalBrokerage + govtCharges).toFixed(2) + "</b> <button class='refreshBrokerage' id='btnRefreshBrokerage' >Refresh</button>  <br><span class='small'> Brokerage : "+totalBrokerage.toFixed(2)+" , Government Taxes : "+ govtCharges.toFixed(2) + "</span>";
+    brokerageContainer.innerHTML = "Intraday ( MIS ) charges : <b>Rs. " 
+      + (totalBrokerage + govtCharges).toFixed(2) 
+      + "</b> <button class='refreshBrokerage' id='btnRefreshBrokerage' >Refresh</button>  <br><span class='small'> Brokerage : "
+      +totalBrokerage.toFixed(2)
+      +" , Taxes : "
+      + govtCharges.toFixed(2) 
+      + "<br> [ STT : "+totalSTT.toFixed(2) 
+      + ", SEBI : "+totalSEBI.toFixed(2) 
+      + ", Transacation Charges : "+totalTransactionCharges.toFixed(2) 
+      + ", GST : "+totalGST.toFixed(2) 
+      + ", StampDuty : "+totalStamp.toFixed(2) 
+      +" ]</span>";
 	}
 }
 
