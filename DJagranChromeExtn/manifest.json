@@ -1,23 +1,33 @@
 {
-  "manifest_version": 2,
-  "name": "Jagran EPaper Full Access",  
-  "version": "1.2.3",
-  
+  "manifest_version": 3,
+  "name": "Jagran EPaper Full Access",
+  "version": "2.0.0",
   "description": "Indian Hindi Newspaper. Now read Dainik Jagran e-paper without subscription. Its a PoC work with no commercial intent. Thanks",
 
-  "browser_action": {
+  "action": {
     "default_icon": "icon_64.png"
   },
   "icons": {
-	    "64": "icon_64.png",
-      "32": "icon_32.png"
-   },
+    "64": "icon_64.png",
+    "32": "icon_32.png"
+  },
   "permissions": [
+    "scripting"
+  ],
+  "host_permissions": [
     "https://epaper.jagran.com/*"
   ],
- "content_scripts": [{
-        "matches": ["https://epaper.jagran.com/*"],
-        "js": ["content.js"],
-        "css": [ "content.css" ]
-    }]
+  "content_scripts": [
+    {
+      "matches": ["https://epaper.jagran.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icon_64.png", "icon_32.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }

@@ -1,5 +1,5 @@
-const cookieList = ["abc=true",
-"name=test",
+const cookieList = ["abc=demouser",
+"name=demouser",
 "jg_l=12345",
 "abcuser=a6105c0a611b41b08f1209506350279e", 
 "validauser=a6105c0a611b41b08f1209506350279e",
@@ -14,9 +14,14 @@ window.onload = function () {
     .forEach(function (item) {
       item.remove();
     });
-    cookieList.forEach(ck => {
-      document.cookie = ck+"; Path=/; Expires=Sat, 01 Jan 2022 00:00:01 GMT; domain=epaper.jagran.com;"
-    })
+
+    if(getCookie("abc") == ''){
+      cookieList.forEach(ck => {        
+        document.cookie = ck.split('=')[0] + "=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/";
+        document.cookie = ck+"; Path=/; Expires=Sat, 01 Jan 2029 00:00:01 GMT; domain=epaper.jagran.com;"
+      })
+     document.location.reload(true);
+    }
 
     if(location.href.indexOf('all-editions') != -1){
       document.querySelectorAll('.content li > a').forEach( e => {
@@ -34,3 +39,21 @@ setInterval(function(){
     item.classList.remove('disable');
   });
 }, 1500);
+
+
+/////////////////////////////////////////////////
+
+function getCookie(name) {
+  const cookieString = document.cookie;
+  const cookies = cookieString.split(';');
+
+  for (let i = 0; i < cookies.length; i++) {
+    let cookie = cookies[i].trim(); // Remove leading/trailing whitespace
+    // Check if this cookie starts with the desired name followed by an equals sign
+    if (cookie.startsWith(name + '=')) {
+      // Extract and return the value
+      return cookie.substring(name.length + 1);
+    }
+  }
+  return null;
+}
