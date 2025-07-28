@@ -6,8 +6,9 @@ const cookieList = ["abc=demouser",
 "uloc=india",
 "hide=true"];
 
-window.onload = function () {
-  let loginPrompt = document.getElementsByClassName("login-col")[0];
+
+window.addEventListener('load', () => {
+ let loginPrompt = document.getElementsByClassName("login-col")[0];
   if (loginPrompt != null) loginPrompt.parentNode.removeChild(loginPrompt);
   document
     .querySelectorAll('.ads, .gutter-banner, [id*="389882"]')
@@ -32,7 +33,8 @@ window.onload = function () {
     }
 
   console.clear();
-};
+});
+
 
 setInterval(function(){
   document.querySelectorAll('.disable').forEach(function (item) {
@@ -41,17 +43,15 @@ setInterval(function(){
 }, 1500);
 
 
-/////////////////////////////////////////////////
+// Helper Funtion //
 
 function getCookie(name) {
   const cookieString = document.cookie;
   const cookies = cookieString.split(';');
 
   for (let i = 0; i < cookies.length; i++) {
-    let cookie = cookies[i].trim(); // Remove leading/trailing whitespace
-    // Check if this cookie starts with the desired name followed by an equals sign
-    if (cookie.startsWith(name + '=')) {
-      // Extract and return the value
+    let cookie = cookies[i].trim();    
+    if (cookie.startsWith(name + '=')) {      
       return cookie.substring(name.length + 1);
     }
   }
