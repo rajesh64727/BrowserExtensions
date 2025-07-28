@@ -12,11 +12,14 @@
     "32": "icon_32.png"
   },
   "permissions": [
-    "scripting"
+    "scripting", "tabs"
   ],
   "host_permissions": [
     "https://epaper.jagran.com/*"
-  ],
+  ],  
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
       "matches": ["https://epaper.jagran.com/*"],
